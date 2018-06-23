@@ -397,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4996620447022102}
   - component: {fileID: 137535214599989610}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boxer_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1174912174584122}
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 4.81, y: 1.1, z: 0.15}
+  m_LocalPosition: {x: 3.04, y: 1.1, z: -0.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4448294289282142}
@@ -856,15 +856,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCamera: {fileID: 0}
-  speed: 6
-  rotationSpeed: 10
-  jumpSpeed: 8
-  gravity: 20
   horizontalAxis: Horizonal_P2
   verticalAxis: Vertical_P2
+  rsHorizontalAxis: RS_Horizonal_P1
+  rsVerticalAxis: RS_Vertical_P1
   jumpButton: Jump_P2
-  isDebugMode: 0
-  isAimingMode: 0
+  punchRightButton: Punch_R_P1
+  punchLeftButton: Punch_L_P1
+  blockButton: Block_P1
+  dashButton: Dash_P1
+  speed: 6
+  jumpSpeed: 8
+  gravity: 20
 --- !u!137 &137535214599989610
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
