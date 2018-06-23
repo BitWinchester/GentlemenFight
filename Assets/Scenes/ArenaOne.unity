@@ -1172,7 +1172,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4182406548765110, guid: 4cbf6fa50060b2b46b7e722061217e34, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.61
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 4182406548765110, guid: 4cbf6fa50060b2b46b7e722061217e34, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1180,7 +1180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4182406548765110, guid: 4cbf6fa50060b2b46b7e722061217e34, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.27
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 4182406548765110, guid: 4cbf6fa50060b2b46b7e722061217e34, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2509,6 +2509,11 @@ Prefab:
       value: 
       objectReference: {fileID: 4182406548765110, guid: 8b8388a9c96a7a34ca49128b7e96e893,
         type: 2}
+    - target: {fileID: 114515478809681954, guid: 8c94ac5f3bdea3e48bec3c463013ccaa,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c94ac5f3bdea3e48bec3c463013ccaa, type: 2}
   m_IsPrefabParent: 0
@@ -5410,7 +5415,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4182406548765110, guid: 8b8388a9c96a7a34ca49128b7e96e893, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.81
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 4182406548765110, guid: 8b8388a9c96a7a34ca49128b7e96e893, type: 2}
       propertyPath: m_LocalPosition.y
@@ -5418,7 +5423,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4182406548765110, guid: 8b8388a9c96a7a34ca49128b7e96e893, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.15
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 4182406548765110, guid: 8b8388a9c96a7a34ca49128b7e96e893, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5439,6 +5444,16 @@ Prefab:
     - target: {fileID: 4182406548765110, guid: 8b8388a9c96a7a34ca49128b7e96e893, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605449945271014, guid: 8b8388a9c96a7a34ca49128b7e96e893,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 143295128270714452, guid: 8b8388a9c96a7a34ca49128b7e96e893,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b8388a9c96a7a34ca49128b7e96e893, type: 2}
