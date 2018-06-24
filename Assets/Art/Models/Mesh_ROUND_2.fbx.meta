@@ -7,6 +7,8 @@ ModelImporter:
     400000: //RootNode
     2100000: typeBlinn2
     2100002: typeBlinn1
+    2100004: typeBlinn3
+    2100006: lambert1
     2300000: //RootNode
     3300000: //RootNode
     4300000: Mesh_ROUND_3
