@@ -44,6 +44,8 @@ public class characterScript : MonoBehaviour
     public bool isPunchingRight;
     public bool isPunchingLeft;
 
+    public Winner winnerScript;
+
 
 
     private void Start()
@@ -177,7 +179,7 @@ public class characterScript : MonoBehaviour
 
     public void Death()
     {
-       
+        winnerScript.ShowWinningFx();
         AudioS.clip = punchHit;
         AudioS.Play();
         Compliment();

@@ -2825,6 +2825,11 @@ Prefab:
       propertyPath: jump
       value: 
       objectReference: {fileID: 8300000, guid: 67ff0ffe5761b5e42b92c4fc39e3daea, type: 3}
+    - target: {fileID: 114605449945271014, guid: 4cbf6fa50060b2b46b7e722061217e34,
+        type: 2}
+      propertyPath: winnerScript
+      value: 
+      objectReference: {fileID: 458211944}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cbf6fa50060b2b46b7e722061217e34, type: 2}
   m_IsPrefabParent: 0
@@ -4052,6 +4057,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &458211943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 458211945}
+  - component: {fileID: 458211944}
+  m_Layer: 0
+  m_Name: WinnerFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &458211944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458211943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 985f619fdfb8fcf419db8cb45f9ebb48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winnerFx: {fileID: 1551268394776758, guid: 60970ccad7178594b855a666fbc957f4, type: 2}
+--- !u!4 &458211945
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 458211943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &461471951
 Prefab:
@@ -6096,6 +6142,11 @@ Prefab:
       propertyPath: jump
       value: 
       objectReference: {fileID: 8300000, guid: 67ff0ffe5761b5e42b92c4fc39e3daea, type: 3}
+    - target: {fileID: 114928660564869982, guid: 0943609d9f9de3c44b85a67ce48a331a,
+        type: 2}
+      propertyPath: winnerScript
+      value: 
+      objectReference: {fileID: 458211944}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0943609d9f9de3c44b85a67ce48a331a, type: 2}
   m_IsPrefabParent: 0
