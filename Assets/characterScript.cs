@@ -13,7 +13,7 @@ public class characterScript : MonoBehaviour
     public string jumpButton = "Jump_P1";
     public string punchRightButton = "Punch_R_P1";
     public string punchLeftButton = "Punch_L_P1";
-    public string blockButton = "Block_P1";
+    public string throwButton = "Throw_P1";
     public string dashButton = "Dash_P1";
     public float speed = 6.0F;
     public float rotateSpeed = 16f;
@@ -125,7 +125,7 @@ public class characterScript : MonoBehaviour
 
 
 
-        if (Input.GetButton(blockButton))
+        if (Input.GetButton(throwButton))
         {
             print("BLocking!");
         }
