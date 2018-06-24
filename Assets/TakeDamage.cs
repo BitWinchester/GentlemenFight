@@ -19,10 +19,19 @@ public class TakeDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "DamageVolume")
+        if(other.name == "HitBox")
         {
-            print(other.name+"HitBox");
+            print(other.name);
+
+            if (other.GetComponentInParent<characterScript>() != null)
+            {
+                other.GetComponentInParent<characterScript>().Death();
+
+            }
         }
+
+
+        
 
     }
 }

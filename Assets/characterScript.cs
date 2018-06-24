@@ -20,11 +20,13 @@ public class characterScript : MonoBehaviour
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public float dashTime = 1f;
-    public GameObject damageCollider;
+    public GameObject attackVolumeRight;
+    public GameObject attackVolumeLeft;
     private Vector3 moveDirection = Vector3.zero;
     private Vector3 lookDirection = Vector3.zero;
     private Vector3 facing = Vector3.zero;
     private CharacterController controller;
+    private Rigidbody rb;
 
     public Animator anim;
     
@@ -32,6 +34,8 @@ public class characterScript : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        rb = GetComponentInParent<Rigidbody>();
+        print(rb);
     }
     void Update()
     {
@@ -95,27 +99,27 @@ public class characterScript : MonoBehaviour
         {
             
             anim.SetBool("bRightPunch", true);
-           // damageCollider.SetActive(true);
+           attackVolumeRight.SetActive(true);
 
         }
         if (Input.GetAxis(punchRightButton) < 0.1)
         {
             
             anim.SetBool("bRightPunch", false);
-           // damageCollider.SetActive(false);
+           attackVolumeRight.SetActive(false);
         }
 
         if (Input.GetAxis(punchLeftButton) > 0)
         {
            
             anim.SetBool("bLeftPunch", true);
-           // damageCollider.SetActive(true);
+            attackVolumeLeft.SetActive(true);
         }
         if (Input.GetAxis(punchLeftButton) < 0.1)
         {
 
             anim.SetBool("bLeftPunch", false);
-           // damageCollider.SetActive(false);
+            attackVolumeLeft.SetActive(false);
         }
 
 
@@ -138,6 +142,11 @@ public class characterScript : MonoBehaviour
         
     }
 
-
+    public void Death()
+    {
+        Destroy(this);
+        rb.isKinematic = false;
+        anim.SetBool("isDead", true);
+    }
 
 }
