@@ -249,10 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5f096f6c48bb645a33ec749a893a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 2.5
+  delay: 2
   explosionFX: {fileID: 1513065589801966, guid: 28ba12eb08f777f44abc637830cc0a12,
     type: 2}
   explosionRadius: 3
   audioS: {fileID: 0}
-  bombExplodeAudio: {fileID: 8300000, guid: 37cb77598e701074083f40a14d316fb9, type: 3}
+  bombExplodeAudio: {fileID: 8300000, guid: 50efa04db93772344a5990b5e986fce4, type: 3}
   bombCollision: {fileID: 8300000, guid: ef7a7d584153cbb479a8dcd9dd1226c0, type: 3}

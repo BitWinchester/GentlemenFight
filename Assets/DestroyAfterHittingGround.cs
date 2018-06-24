@@ -13,6 +13,7 @@ public class DestroyAfterHittingGround : MonoBehaviour {
     public AudioClip bombExplodeAudio;
     public AudioClip bombCollision;
 
+
     private void Start()
     {
         audioS = GetComponent<AudioSource>();
@@ -40,6 +41,7 @@ public class DestroyAfterHittingGround : MonoBehaviour {
         audioS.clip = bombExplodeAudio;
         audioS.Play();
         Instantiate(explosionFX, transform.position, transform.rotation);
+        transform.GetChild(0).gameObject.SetActive(false);
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
 
         foreach (Collider nearbyObject in colliders)
@@ -52,7 +54,7 @@ public class DestroyAfterHittingGround : MonoBehaviour {
             }
            
         }
-        Destroy(gameObject, .75f);
+        Destroy(gameObject, 1.2f);
     }
 
 
