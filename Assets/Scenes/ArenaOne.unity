@@ -3656,6 +3656,21 @@ Prefab:
       propertyPath: myCamera
       value: 
       objectReference: {fileID: 959758556}
+    - target: {fileID: 114605449945271014, guid: 4cbf6fa50060b2b46b7e722061217e34,
+        type: 2}
+      propertyPath: jumpSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 137535214599989610, guid: 4cbf6fa50060b2b46b7e722061217e34,
+        type: 2}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52837a7e074dc444da09f1db5f34f578, type: 2}
+    - target: {fileID: 137535214599989610, guid: 4cbf6fa50060b2b46b7e722061217e34,
+        type: 2}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: f97aead19b5232f4e8641a6f83de8ab1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cbf6fa50060b2b46b7e722061217e34, type: 2}
   m_IsPrefabParent: 0
@@ -11264,6 +11279,16 @@ Prefab:
       propertyPath: myCamera
       value: 
       objectReference: {fileID: 959758556}
+    - target: {fileID: 137535214599989610, guid: 8b8388a9c96a7a34ca49128b7e96e893,
+        type: 2}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4acfc2d51e6505a4998c5ad1d458e760, type: 2}
+    - target: {fileID: 137535214599989610, guid: 8b8388a9c96a7a34ca49128b7e96e893,
+        type: 2}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: ff37c7e7c7983de4ebc5d722dd56add0, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b8388a9c96a7a34ca49128b7e96e893, type: 2}
   m_IsPrefabParent: 0

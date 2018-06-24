@@ -867,7 +867,7 @@ MonoBehaviour:
   dashButton: Dash_P1
   speed: 6
   rotateSpeed: 16
-  jumpSpeed: 8
+  jumpSpeed: 6
   gravity: 20
   dashTime: 1
   anim: {fileID: 95839147321281948}
@@ -888,9 +888,9 @@ SkinnedMeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 0dafcf64aa0eaf64ba672361fdc7f82c, type: 3}
   - {fileID: 2100002, guid: 0dafcf64aa0eaf64ba672361fdc7f82c, type: 3}
-  - {fileID: 2100004, guid: 0dafcf64aa0eaf64ba672361fdc7f82c, type: 3}
+  - {fileID: 2100000, guid: 52837a7e074dc444da09f1db5f34f578, type: 2}
   - {fileID: 2100006, guid: 0dafcf64aa0eaf64ba672361fdc7f82c, type: 3}
-  - {fileID: 2100008, guid: 0dafcf64aa0eaf64ba672361fdc7f82c, type: 3}
+  - {fileID: 2100000, guid: f97aead19b5232f4e8641a6f83de8ab1, type: 2}
   - {fileID: 2100010, guid: 0dafcf64aa0eaf64ba672361fdc7f82c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
