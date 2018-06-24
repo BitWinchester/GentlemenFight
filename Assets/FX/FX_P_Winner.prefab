@@ -4743,7 +4743,7 @@ ParticleSystemRenderer:
   m_UseCustomVertexStreams: 0
   m_EnableGPUInstancing: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 4300000, guid: a0b11c9786e6cdc42879569fab088032, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ff495c76acb3cb74681e5d65f1bf61c9, type: 3}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
