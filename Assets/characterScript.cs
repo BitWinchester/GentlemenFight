@@ -35,8 +35,20 @@ public class characterScript : MonoBehaviour
     public Animator anim;
 
 
+    public AudioSource AudioS;
+    public AudioSource AudioS2;
+    public AudioClip punchHit;
+    public AudioClip punchMiss;
+    public AudioClip jump;
+    public AudioClip[] complimentsOnDeath;
+    public bool isPunchingRight;
+    public bool isPunchingLeft;
+
+
+
     private void Start()
     {
+        
         controller = GetComponent<CharacterController>();
         rb = GetComponentInParent<Rigidbody>();
 
@@ -91,7 +103,11 @@ public class characterScript : MonoBehaviour
             }
 
             if (Input.GetButton(jumpButton))
+            {
+                AudioS.PlayOneShot(jump);
                 moveDirection.y = jumpSpeed;
+            }
+                
         }
 
         if(facing !=Vector3.zero)
@@ -104,27 +120,36 @@ public class characterScript : MonoBehaviour
     {
         if (Input.GetAxis(punchRightButton) > 0)
         {
-
+            if(!isPunchingRight)
+            {
+                isPunchingRight = true;
+                AudioS.PlayOneShot(punchMiss);
+            }
             anim.SetBool("bRightPunch", true);
             attackVolumeRight.SetActive(true);
 
         }
         if (Input.GetAxis(punchRightButton) < 0.1)
         {
-
+            isPunchingRight = false;
             anim.SetBool("bRightPunch", false);
             attackVolumeRight.SetActive(false);
         }
 
         if (Input.GetAxis(punchLeftButton) > 0)
         {
+            if (!isPunchingLeft)
+            {
+                isPunchingLeft = true;
+                AudioS2.PlayOneShot(punchMiss);
+            }
 
             anim.SetBool("bLeftPunch", true);
             attackVolumeLeft.SetActive(true);
         }
         if (Input.GetAxis(punchLeftButton) < 0.1)
         {
-
+            isPunchingLeft = false;
             anim.SetBool("bLeftPunch", false);
             attackVolumeLeft.SetActive(false);
         }
@@ -137,9 +162,10 @@ public class characterScript : MonoBehaviour
             
         }
 
-        if (Input.GetButton(dashButton))
+        if (Input.GetButtonDown(dashButton))
         {
-            
+            AudioS2.clip = complimentsOnDeath[Random.Range(0, complimentsOnDeath.Length)];
+            AudioS2.Play();
         }
 
     }
@@ -151,6 +177,9 @@ public class characterScript : MonoBehaviour
 
     public void Death()
     {
+       
+        AudioS.clip = punchHit;
+        AudioS.Play();
         Compliment();
         bDead = true;
         Destroy(this);

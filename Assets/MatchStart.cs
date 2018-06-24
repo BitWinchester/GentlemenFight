@@ -13,6 +13,8 @@ public class MatchStart : MonoBehaviour
     public characterScript player1;
     public characterScript player2;
 
+    
+
     void Start()
     {
         if (Instance != null)
@@ -30,7 +32,7 @@ public class MatchStart : MonoBehaviour
         }
 
         Instantiate(roundTitle[currentRound], new Vector3(0, 0, 0), Quaternion.identity);
-
+        
 
 
     }
