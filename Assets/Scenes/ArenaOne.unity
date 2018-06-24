@@ -6164,7 +6164,8 @@ Prefab:
       propertyPath: fireRate
       value: 0.6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114118470484117714, guid: 0943609d9f9de3c44b85a67ce48a331a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0943609d9f9de3c44b85a67ce48a331a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &855604529
@@ -14720,18 +14721,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1174912174584122, guid: 4cbf6fa50060b2b46b7e722061217e34,
     type: 2}
   m_PrefabInternal: {fileID: 356835195}
---- !u!114 &1423380872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1423380867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c9a84a8e672cf64f9410d56ae471184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compliments: []
 --- !u!82 &1423380873
 AudioSource:
   m_ObjectHideFlags: 0

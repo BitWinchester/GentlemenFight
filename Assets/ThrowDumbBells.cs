@@ -24,6 +24,7 @@ public class ThrowDumbBells : MonoBehaviour
 
         if (Input.GetButtonDown(cs.throwButton) && Time.time > nextFire && cs.bDead == false)
         {
+            cs.AudioCompliment();
             nextFire = Time.time + fireRate;
             GameObject temp = Instantiate(proj, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), Quaternion.identity);
             temp.GetComponentInParent<Rigidbody>().velocity = spawnPoint.forward * speed;
