@@ -835,7 +835,7 @@ Animator:
   m_GameObject: {fileID: 1949648478757952}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0dafcf64aa0eaf64ba672361fdc7f82c, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e70ad9cf2fc5088418c3ec33d57dfa59, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -858,16 +858,19 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   horizontalAxis: Horizonal_P2
   verticalAxis: Vertical_P2
-  rsHorizontalAxis: RS_Horizonal_P1
-  rsVerticalAxis: RS_Vertical_P1
+  rsHorizontalAxis: RS_Horizonal_P2
+  rsVerticalAxis: RS_Vertical_P2
   jumpButton: Jump_P2
   punchRightButton: Punch_R_P1
   punchLeftButton: Punch_L_P1
   blockButton: Block_P1
   dashButton: Dash_P1
   speed: 6
+  rotateSpeed: 16
   jumpSpeed: 8
   gravity: 20
+  dashTime: 1
+  anim: {fileID: 95839147321281948}
 --- !u!137 &137535214599989610
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
