@@ -20,6 +20,8 @@ public class characterScript : MonoBehaviour
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public float dashTime = 1f;
+    public float complimentSpawnTime = 10f;
+    public GameObject[] compliments;
     public GameObject hitBox;
     public GameObject attackVolumeRight;
     public GameObject attackVolumeLeft;
@@ -28,20 +30,23 @@ public class characterScript : MonoBehaviour
     private Vector3 facing = Vector3.zero;
     private CharacterController controller;
     private Rigidbody rb;
+    public bool bDead = false;
 
     public Animator anim;
-    
+
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponentInParent<Rigidbody>();
-        
+
     }
     void Update()
     {
-       
-            Debug.DrawRay(transform.position, lookDirection);
+        
+        
+
+        Debug.DrawRay(transform.position, lookDirection);
 
 
         //else if (moveDirection.sqrMagnitude > 0.1f)
@@ -52,9 +57,9 @@ public class characterScript : MonoBehaviour
 
         CharacterMovementUpdate();
         controller.Move(moveDirection * speed * Time.deltaTime);
-        
+
         moveDirection.y -= gravity * Time.deltaTime;
-        
+
         ButtonTesting();
 
 
@@ -66,7 +71,7 @@ public class characterScript : MonoBehaviour
         {
             lookDirection = new Vector3(Input.GetAxisRaw(rsHorizontalAxis), 0, Input.GetAxisRaw(rsVerticalAxis));
             lookDirection = myCamera.transform.TransformDirection(lookDirection);
-            lookDirection.y = 0f;   
+            lookDirection.y = 0f;
             lookDirection.Normalize();
 
             moveDirection = new Vector3(Input.GetAxisRaw(horizontalAxis), 0, Input.GetAxisRaw(verticalAxis));
@@ -76,7 +81,7 @@ public class characterScript : MonoBehaviour
             Debug.DrawRay(transform.position, moveDirection);
 
 
-            if(lookDirection != Vector3.zero)
+            if (lookDirection != Vector3.zero)
             {
                 facing = lookDirection;
             }
@@ -89,6 +94,7 @@ public class characterScript : MonoBehaviour
                 moveDirection.y = jumpSpeed;
         }
 
+        if(facing !=Vector3.zero)
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(facing), Time.deltaTime * rotateSpeed);
     }
 
@@ -98,21 +104,21 @@ public class characterScript : MonoBehaviour
     {
         if (Input.GetAxis(punchRightButton) > 0)
         {
-            
+
             anim.SetBool("bRightPunch", true);
-           attackVolumeRight.SetActive(true);
+            attackVolumeRight.SetActive(true);
 
         }
         if (Input.GetAxis(punchRightButton) < 0.1)
         {
-            
+
             anim.SetBool("bRightPunch", false);
-           attackVolumeRight.SetActive(false);
+            attackVolumeRight.SetActive(false);
         }
 
         if (Input.GetAxis(punchLeftButton) > 0)
         {
-           
+
             anim.SetBool("bLeftPunch", true);
             attackVolumeLeft.SetActive(true);
         }
@@ -128,28 +134,38 @@ public class characterScript : MonoBehaviour
 
         if (Input.GetButton(throwButton))
         {
-            print("BLocking!");
+            
         }
 
         if (Input.GetButton(dashButton))
         {
-            print("Dashing");
+            
         }
 
     }
 
     void Dash()
     {
-        
+
     }
 
     public void Death()
     {
+        Compliment();
+        bDead = true;
         Destroy(this);
         Destroy(hitBox);
         rb.isKinematic = false;
         rb.AddForce(transform.forward * -5000f);
         anim.SetBool("isDead", true);
+
+    }
+
+    public void Compliment()
+    {
+        complimentSpawnTime = Time.time + Random.Range(4f, 8f);
+        GameObject temp = Instantiate(compliments[Random.Range(0, compliments.Length)], gameObject.transform);
+        Destroy(temp, 3f);
     }
 
 }

@@ -22,7 +22,7 @@ public class ThrowDumbBells : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown(cs.throwButton) && Time.time > nextFire)
+        if (Input.GetButtonDown(cs.throwButton) && Time.time > nextFire && cs.bDead == false)
         {
             nextFire = Time.time + fireRate;
             GameObject temp = Instantiate(proj, new Vector3(spawnPoint.position.x, spawnPoint.position.y, spawnPoint.position.z), Quaternion.identity);

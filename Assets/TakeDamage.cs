@@ -21,7 +21,7 @@ public class TakeDamage : MonoBehaviour
     {
         if(other.name == "HitBox")
         {
-            print(other.name);
+           
 
             if (other.GetComponentInParent<characterScript>() != null)
             {

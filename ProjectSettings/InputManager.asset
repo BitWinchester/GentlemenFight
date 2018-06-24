@@ -48,7 +48,7 @@ InputManager:
     gravity: 0
     dead: 0.1
     sensitivity: 1000
-    snap: 1
+    snap: 0
     invert: 0
     type: 2
     axis: 9
@@ -192,7 +192,7 @@ InputManager:
     gravity: 0
     dead: 0.1
     sensitivity: 1000
-    snap: 1
+    snap: 0
     invert: 0
     type: 2
     axis: 9
@@ -293,3 +293,19 @@ InputManager:
     type: 2
     axis: 4
     joyNum: 2
+  - serializedVersion: 3
+    m_Name: NextRound
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 7
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.0001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
