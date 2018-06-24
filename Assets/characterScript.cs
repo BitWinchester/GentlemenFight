@@ -16,10 +16,17 @@ public class characterScript : MonoBehaviour
     public string blockButton = "Block_P1";
     public string dashButton = "Dash_P1";
     public float speed = 6.0F;
+    public float rotateSpeed = 16f;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
+    public float dashTime = 1f;
     private Vector3 moveDirection = Vector3.zero;
+    private Vector3 lookDirection = Vector3.zero;
+    private Vector3 facing = Vector3.zero;
     private CharacterController controller;
+
+    public Animator anim;
+    
 
     private void Start()
     {
@@ -27,71 +34,86 @@ public class characterScript : MonoBehaviour
     }
     void Update()
     {
-
-        if (controller.isGrounded)
-        {
-            CharacterMovementUpdate();
-        }
-     
-        moveDirection.y -= gravity * Time.deltaTime;
-        controller.Move(moveDirection * speed *  Time.deltaTime);
        
+            Debug.DrawRay(transform.position, lookDirection);
+
+
+        //else if (moveDirection.sqrMagnitude > 0.1f)
+        //{
+        //    Vector3 facing = moveDirection;
+        //    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(new Vector3(facing.x, 0, facing.z)), Time.deltaTime * rotateSpeed);
+        //}
+
+        CharacterMovementUpdate();
+        controller.Move(moveDirection * speed * Time.deltaTime);
+        
+        moveDirection.y -= gravity * Time.deltaTime;
+        
         ButtonTesting();
-
-
-
-
-
-
-
 
 
     }
 
     public void CharacterMovementUpdate()
     {
-        moveDirection = new Vector3(Input.GetAxis(horizontalAxis), 0, Input.GetAxis(verticalAxis));
-        moveDirection = myCamera.transform.TransformDirection(moveDirection);
-        moveDirection.y = 0f;
-        //moveDirection.Normalize();
-        //var forward = myCamera.transform.forward;
-       // var right = myCamera.transform.right;
+        if (controller.isGrounded)
+        {
+            lookDirection = new Vector3(Input.GetAxisRaw(rsHorizontalAxis), 0, Input.GetAxisRaw(rsVerticalAxis));
+            lookDirection = myCamera.transform.TransformDirection(lookDirection);
+            lookDirection.y = 0f;   
+            lookDirection.Normalize();
 
-        //project forward and right vectors on the horizontal plane (y = 0)
-            //forward.y = 0f;
-            //right.y = 0f;
-            //forward.Normalize();
-            //right.Normalize();
-
-    
-        //var desiredMoveDirection = forward * moveDirection.z + right * moveDirection.x; //this is the direction in the world space we want to move:
-
-        //now we can apply the movement:
-        //transform.Translate(desiredMoveDirection * speed * Time.deltaTime);
-        //controller.Move(moveDirection * speed * Time.deltaTime);
+            moveDirection = new Vector3(Input.GetAxisRaw(horizontalAxis), 0, Input.GetAxisRaw(verticalAxis));
+            moveDirection = myCamera.transform.TransformDirection(moveDirection);
+            moveDirection.y = 0f;
+            moveDirection.Normalize();
+            Debug.DrawRay(transform.position, moveDirection);
 
 
+            if(lookDirection != Vector3.zero)
+            {
+                facing = lookDirection;
+            }
+            else if (moveDirection != Vector3.zero)
+            {
+                facing = moveDirection;
+            }
 
-        //moveDirection *= speed;
-        Debug.DrawRay(transform.position, moveDirection);
+            if (Input.GetButton(jumpButton))
+                moveDirection.y = jumpSpeed;
+        }
 
-
-
-        if (Input.GetButton(jumpButton))
-            moveDirection.y = jumpSpeed;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(facing), Time.deltaTime * rotateSpeed);
     }
+
+
 
     void ButtonTesting()
     {
         if (Input.GetAxis(punchRightButton) > 0)
         {
             print("punch Right Hand");
+            anim.SetBool("bRightPunch", true);
+        }
+        if (Input.GetAxis(punchRightButton) < 0.1)
+        {
+            
+            anim.SetBool("bRightPunch", false);
         }
 
         if (Input.GetAxis(punchLeftButton) > 0)
         {
-            print("punch Left Hand");
+           
+            anim.SetBool("bLeftPunch", true);
         }
+        if (Input.GetAxis(punchLeftButton) < 0.1)
+        {
+
+            anim.SetBool("bLeftPunch", false);
+        }
+
+
+
 
         if (Input.GetButton(blockButton))
         {
@@ -102,8 +124,14 @@ public class characterScript : MonoBehaviour
         {
             print("Dashing");
         }
+
     }
 
-    
+    void Dash()
+    {
+        
+    }
+
+
 
 }

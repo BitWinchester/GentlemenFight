@@ -29,6 +29,7 @@ ModelImporter:
     100046: Spine_01
     100048: Spine_02
     100050: Spine_03
+    100052: nurbsCircle12
     400000: //RootNode
     400002: Head
     400004: HeadTop
@@ -55,6 +56,7 @@ ModelImporter:
     400046: Spine_01
     400048: Spine_02
     400050: Spine_03
+    400052: nurbsCircle12
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}

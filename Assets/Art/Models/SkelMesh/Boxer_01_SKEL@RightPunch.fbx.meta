@@ -29,6 +29,7 @@ ModelImporter:
     100046: Spine_01
     100048: Spine_02
     100050: Spine_03
+    100052: nurbsCircle12
     400000: //RootNode
     400002: Head
     400004: HeadTop
@@ -55,7 +56,8 @@ ModelImporter:
     400046: Spine_01
     400048: Spine_02
     400050: Spine_03
-    7400000: Take 001
+    400052: nurbsCircle12
+    7400000: RightPunch
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -84,7 +86,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: RightPunch
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
