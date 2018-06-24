@@ -199,4 +199,10 @@ public class characterScript : MonoBehaviour
         Destroy(temp, 3f);
     }
 
+    public void AudioCompliment()
+    {
+        AudioS2.clip = complimentsOnDeath[Random.Range(0, complimentsOnDeath.Length)];
+        AudioS2.Play();
+    }
+
 }
