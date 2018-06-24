@@ -20,6 +20,7 @@ public class characterScript : MonoBehaviour
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public float dashTime = 1f;
+    public GameObject damageCollider;
     private Vector3 moveDirection = Vector3.zero;
     private Vector3 lookDirection = Vector3.zero;
     private Vector3 facing = Vector3.zero;
@@ -92,24 +93,29 @@ public class characterScript : MonoBehaviour
     {
         if (Input.GetAxis(punchRightButton) > 0)
         {
-            print("punch Right Hand");
+            
             anim.SetBool("bRightPunch", true);
+           // damageCollider.SetActive(true);
+
         }
         if (Input.GetAxis(punchRightButton) < 0.1)
         {
             
             anim.SetBool("bRightPunch", false);
+           // damageCollider.SetActive(false);
         }
 
         if (Input.GetAxis(punchLeftButton) > 0)
         {
            
             anim.SetBool("bLeftPunch", true);
+           // damageCollider.SetActive(true);
         }
         if (Input.GetAxis(punchLeftButton) < 0.1)
         {
 
             anim.SetBool("bLeftPunch", false);
+           // damageCollider.SetActive(false);
         }
 
 
