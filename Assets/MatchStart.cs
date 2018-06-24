@@ -40,17 +40,17 @@ public class MatchStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("NextRound"))
-        {
-            if (currentRound > 3)
-            {
-                currentRound = 0;
-            }else
-            {
-                currentRound++;
-            }
-            SceneManager.LoadScene(0);
-            print("reload scene");
-        }
+        //if (Input.GetButtonDown("NextRound"))
+        //{
+        //    if (currentRound > 3)
+        //    {
+        //        currentRound = 0;
+        //    }else
+        //    {
+        //        currentRound++;
+        //    }
+        //    SceneManager.LoadScene(0);
+        //    print("reload scene");
+        //}
     }
 }
