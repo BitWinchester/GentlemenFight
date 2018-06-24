@@ -20,6 +20,7 @@ public class characterScript : MonoBehaviour
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public float dashTime = 1f;
+    public GameObject hitBox;
     public GameObject attackVolumeRight;
     public GameObject attackVolumeLeft;
     private Vector3 moveDirection = Vector3.zero;
@@ -35,7 +36,7 @@ public class characterScript : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         rb = GetComponentInParent<Rigidbody>();
-        print(rb);
+        
     }
     void Update()
     {
@@ -145,7 +146,9 @@ public class characterScript : MonoBehaviour
     public void Death()
     {
         Destroy(this);
+        Destroy(hitBox);
         rb.isKinematic = false;
+        rb.AddForce(transform.forward * -5000f);
         anim.SetBool("isDead", true);
     }
 
