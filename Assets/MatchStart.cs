@@ -9,14 +9,15 @@ public class MatchStart : MonoBehaviour
     static MatchStart Instance;
 
     public GameObject[] roundTitle;
+    public GameObject finalWinnerFX;
     static public int currentRound = 0;
-    
+
     static public int p1Score;
     static public int p2Score;
 
     public float countDown = 3f;
     public float currentTime;
-    
+
 
 
     void Start()
@@ -29,7 +30,7 @@ public class MatchStart : MonoBehaviour
             Instance = this;
         }
 
-        
+
 
         if (currentRound > 2)
         {
@@ -38,40 +39,43 @@ public class MatchStart : MonoBehaviour
 
         Instantiate(roundTitle[currentRound], new Vector3(0, 0, 0), Quaternion.identity);
 
-        
+
 
     }
 
 
     static public void NextRound()
     {
-        if(p1Score < 3 && p2Score < 3)
+        if (p1Score < 3 && p2Score < 3)
         {
 
-           Instance.StartCoroutine(WaitToStartNextRound());
-            
-        }else
+            Instance.StartCoroutine(WaitToStartNextRound());
+
+        }
+        else
         {
-            if(p1Score >= 3)
+            if (p1Score >= 3)
             {
                 print("p1 wins!");
                 Instance.StartCoroutine(EndGame());
+                Instantiate(Instance.finalWinnerFX, new Vector3(0, 0, 0), Quaternion.identity);
             }
             else
             {
                 print("p2 wins!");
                 Instance.StartCoroutine(EndGame());
+                Instantiate(Instance.finalWinnerFX, new Vector3(0, 0, 0), Quaternion.identity);
             }
         }
-        
-      
+
+
     }
 
     static public IEnumerator WaitToStartNextRound()
     {
-       
+
         yield return new WaitForSeconds(3);
-        
+
         MatchStart.currentRound++;
         SceneManager.LoadScene(1);
         Instance.StopCoroutine(WaitToStartNextRound());
@@ -82,7 +86,8 @@ public class MatchStart : MonoBehaviour
 
         yield return new WaitForSeconds(6);
 
-        MatchStart.currentRound=0;
+
+        MatchStart.currentRound = 0;
         SceneManager.LoadScene(0);
         p1Score = 0;
         p2Score = 0;
