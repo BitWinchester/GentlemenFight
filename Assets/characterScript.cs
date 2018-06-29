@@ -20,6 +20,12 @@ public class characterScript : MonoBehaviour
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public float dashTime = 1f;
+
+    public MatchStart matchStartScript;
+    public string playerScore;
+
+    
+
     public float complimentSpawnTime = 10f;
     public GameObject[] compliments;
     public GameObject hitBox;
@@ -53,11 +59,11 @@ public class characterScript : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         rb = GetComponentInParent<Rigidbody>();
+        
 
     }
     void Update()
     {
-
 
 
         Debug.DrawRay(transform.position, lookDirection);
@@ -108,6 +114,7 @@ public class characterScript : MonoBehaviour
             {
                 AudioS.PlayOneShot(jump);
                 moveDirection.y = jumpSpeed;
+                
             }
 
         }
@@ -179,6 +186,16 @@ public class characterScript : MonoBehaviour
 
     public void Death()
     {
+        if(playerScore == "Player1")
+        {
+            MatchStart.p2Score++;
+            MatchStart.NextRound();
+        }else
+        {
+            MatchStart.p1Score++;
+            MatchStart.NextRound();
+        }
+       
         winnerScript.ShowWinningFx();
         AudioS.clip = punchHit;
         AudioS.Play();

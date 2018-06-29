@@ -13,7 +13,8 @@ public class NextRound : MonoBehaviour {
 	void Update () {
         if (Input.GetButtonDown("NextRound_P2") || Input.GetButtonDown("NextRound_P1"))
         {
-            SceneManager.LoadScene(0);
+            MatchStart.currentRound++;
+            SceneManager.LoadScene(1);
         }
     }
 }
