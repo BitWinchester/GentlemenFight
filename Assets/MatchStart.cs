@@ -11,6 +11,8 @@ public class MatchStart : MonoBehaviour
     public GameObject[] roundTitle;
     public GameObject finalWinnerFX;
     static public int currentRound = 0;
+    static public bool isNextRound = false;
+    
 
     static public int p1Score;
     static public int p2Score;
@@ -48,8 +50,12 @@ public class MatchStart : MonoBehaviour
     {
         if (p1Score < 3 && p2Score < 3)
         {
-
-            Instance.StartCoroutine(WaitToStartNextRound());
+            if (isNextRound == false)
+            {
+                isNextRound = true;
+                Instance.StartCoroutine(WaitToStartNextRound());
+            }
+            
 
         }
         else
@@ -63,6 +69,7 @@ public class MatchStart : MonoBehaviour
             else
             {
                 print("p2 wins!");
+                
                 Instance.StartCoroutine(EndGame());
                 Instantiate(Instance.finalWinnerFX, new Vector3(0, 0, 0), Quaternion.identity);
             }
@@ -78,15 +85,17 @@ public class MatchStart : MonoBehaviour
 
         MatchStart.currentRound++;
         SceneManager.LoadScene(1);
+        isNextRound = false;
         Instance.StopCoroutine(WaitToStartNextRound());
+        
     }
 
     static public IEnumerator EndGame()
     {
 
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(7);
 
-
+        
         MatchStart.currentRound = 0;
         SceneManager.LoadScene(0);
         p1Score = 0;
