@@ -50,15 +50,15 @@ public class characterScript : MonoBehaviour
 
     private void Start()
     {
-        
+
         controller = GetComponent<CharacterController>();
         rb = GetComponentInParent<Rigidbody>();
 
     }
     void Update()
     {
-        
-        
+
+
 
         Debug.DrawRay(transform.position, lookDirection);
 
@@ -109,11 +109,11 @@ public class characterScript : MonoBehaviour
                 AudioS.PlayOneShot(jump);
                 moveDirection.y = jumpSpeed;
             }
-                
+
         }
 
-        if(facing !=Vector3.zero)
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(facing), Time.deltaTime * rotateSpeed);
+        if (facing != Vector3.zero)
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(facing), Time.deltaTime * rotateSpeed);
     }
 
 
@@ -122,7 +122,7 @@ public class characterScript : MonoBehaviour
     {
         if (Input.GetAxis(punchRightButton) > 0)
         {
-            if(!isPunchingRight)
+            if (!isPunchingRight)
             {
                 isPunchingRight = true;
                 AudioS.PlayOneShot(punchMiss);
@@ -161,7 +161,7 @@ public class characterScript : MonoBehaviour
 
         if (Input.GetButton(throwButton))
         {
-            
+
         }
 
         if (Input.GetButtonDown(dashButton))
@@ -184,8 +184,10 @@ public class characterScript : MonoBehaviour
         AudioS.Play();
         Compliment();
         bDead = true;
-        Destroy(this);
         Destroy(hitBox);
+        Destroy(attackVolumeRight);
+        Destroy(attackVolumeLeft);
+        Destroy(this);
         rb.isKinematic = false;
         rb.AddForce(transform.forward * -5000f);
         anim.SetBool("isDead", true);
