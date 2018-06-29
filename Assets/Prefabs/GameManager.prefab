@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 82014222183117406}
   - component: {fileID: 82940970261696178}
   - component: {fileID: 82429797130396760}
-  - component: {fileID: 114396984646819792}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -50,7 +49,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1825794194601498}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b584d42936b59134db71c33b90fba111, type: 3}
@@ -145,7 +144,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1825794194601498}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3a6a6fb27fed0a642a2f556f678b6bc3, type: 3}
@@ -240,7 +239,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1825794194601498}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3386fc9eb4e205459d48a03b500d672, type: 3}
@@ -344,16 +343,9 @@ MonoBehaviour:
   - {fileID: 1829092485908484, guid: e180b4f125ad26c4fb508110664a5c8e, type: 2}
   - {fileID: 1144243223594596, guid: 5421ad43f0ba7ea44b3a049dd809ac22, type: 2}
   - {fileID: 1528208709564974, guid: 91a21d5b015f159448043eb250e13935, type: 2}
-  p1Score: 0
-  p2Score: 0
---- !u!114 &114396984646819792
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1825794194601498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfd7c24fe4efea540b0b52968b04509e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  - {fileID: 1892566304349604, guid: e955a44a938cb004cac9cdee859489ba, type: 2}
+  - {fileID: 1520843707936168, guid: ea0f46c41dfd72b448e927fe7aab2edf, type: 2}
+  finalWinnerFX: {fileID: 1551268394776758, guid: dc43b02cd9ff41c479c0dd8d4805c5ad,
+    type: 2}
+  countDown: 3
+  currentTime: 0
